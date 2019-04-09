@@ -1,0 +1,24 @@
+start;
+variable = 5;
+print(variable > 10);
+print(variable > 4);
+print(variable > 5);
+print(variable < 10);
+print(variable < 4);
+print(variable < 5);
+print(variable <= 10);
+print(variable <= 4);
+print(variable <= 5);
+print(variable >= 10);
+print(variable >= 4);
+print(variable >= 5);
+print(variable == 10);
+print(variable == 4);
+print(variable == 5);
+finish;
+
+
+
+
+
+

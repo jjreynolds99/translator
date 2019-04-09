@@ -1,0 +1,4 @@
+start;
+fin = 12;
+print(fin);
+finish;

@@ -1,0 +1,34 @@
+
+TO GENERATE A simple interpreter for 'MYPL' USING JAVACUP
+
+Follow these steps:
+
+1.  make a directory - say `coursework'
+
+2. Copy all the files in this directory to your coursework directory.
+scanner.java contains code forming the lexical analyser.
+parser.cup is the syntax specification plus embedded 
+Java code for a simple language of assignment statements, print
+statements, numeric expressions and a DO - WHILE loop. 
+
+3. The specification of the language is in file parser.cup.
+In your interp directory, issue the command:
+
+ java java_cup.Main < parser.cup
+
+This generates the interpreter in two files -
+parser.java and sym.java.
+
+4. Issue the command:
+ 
+javac parser.java
+
+This compiles the interpreter. 
+
+You can run it with an input file - try input_program1
+
+java parser < input_program1
+
+
+
+

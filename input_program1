@@ -1,0 +1,9 @@
+start;
+p = 23;
+do
+   p = p-1; 
+   ifff = p*p; 
+   print(p,ifff);
+   print(p > 10);
+while p > 10;
+finish;

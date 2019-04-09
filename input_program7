@@ -1,0 +1,1 @@
+start; function; print(x+x); end; x=4; call; x=7; call; finish;

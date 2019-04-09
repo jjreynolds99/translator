@@ -1,0 +1,110 @@
+
+
+ 
+import java_cup.runtime.*;
+/* import sym; */
+ 
+public class scanner {
+  /* single lookahead character */
+  protected static int next_char;
+ 
+  /* advance input by one character */
+  protected static void advance()
+    throws java.io.IOException
+    { next_char = System.in.read(); }
+ 
+  /* initialize the scanner */
+  public static void init()
+    throws java.io.IOException
+    { advance(); }
+ 
+  /* recognize and return the next complete token */
+  public static Symbol next_token()
+    throws java.io.IOException
+    {
+      for (;;)
+        switch (next_char)
+          {
+            case '0': case '1': case '2': case '3': case '4':
+            case '5': case '6': case '7': case '8': case '9':
+              /* parse a decimal integer */
+              int i_val = 0;
+              do {
+                i_val = i_val * 10 + (next_char - '0');
+                advance();
+              } while (next_char >= '0' && next_char <= '9');
+            return new Symbol(sym.INT, new Integer(i_val));
+ 
+            case '=': advance(); return new Symbol(sym.ASSIGNS);
+            case ';': advance(); return new Symbol(sym.SEMI);
+            case '+': advance(); return new Symbol(sym.PLUS);
+            case '-': advance(); return new Symbol(sym.MINUS);
+            case ',': advance(); return new Symbol(sym.COMMA);
+            case '*': advance(); return new Symbol(sym.TIMES);
+            case '/': advance(); return new Symbol(sym.DIVIDE);
+            case '(': advance(); return new Symbol(sym.LPAREN);
+            case ')': advance(); return new Symbol(sym.RPAREN);
+            case '>': advance(); return new Symbol(sym.GT);
+ 
+	    case 'a': case 'b': case 'c': case 'd': case 'e': case 'f': case 'g':
+	    case 'h': case 'i': case 'j': case 'k': case 'l': case 'm': case 'n':
+	    case 'o': case 'p': case 'q': case 'r': case 's': case 't': case 'u':
+	    case 'v': case 'w': case
+ 'x': case 'y': case 'z':
+
+		String fromchar;
+		String inputstring = "";
+		do{
+		   char next_char_char = (char) next_char;
+		   fromchar = "" + next_char_char;
+		   inputstring = fromchar + inputstring;
+		   advance();
+		}while(next_char >= 'a' && next_char <= 'z');
+		
+		if(inputstring.equals("print"))
+		{
+		   return new Symbol(sym.PRINT);
+		}
+		else if(inputstring.equals("do"))
+		{
+		   return new Symbol(sym.DO);
+		}
+		else if(inputstring.equals("while"))
+		{
+		   return new Symbol(sym.WHILE);
+		}
+		else if(inputstring.equals("start"))
+		{
+		   return new Symbol(sym.START);
+		}
+		else if(inputstring.equals("finish"))
+		{
+		   return new Symbol(sym.FINISH);
+		}
+		else if(inputstring.equals("if"))
+		{
+		   return new Symbol(sym.IF);
+		}
+		else if(inputstring.equals("then"))
+		{
+		   return new Symbol(sym.THEN);
+		}
+		else if(inputstring.equals("endif"))
+		{
+		   return new Symbol(sym.ENDIF);
+		}
+		else
+		{
+		   return new Symbol(sym.ID, inputstring);
+		}
+ 
+            case -1: return new Symbol(sym.EOF);
+ 
+            default:
+              /* in this simple scanner we just ignore everything else */
+              advance();
+            break;
+          }
+    }
+};
+

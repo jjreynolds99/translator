@@ -1,9 +1,12 @@
 start;
-p = 23;
-do
-   p = p-1; 
-   ifff = p*p; 
-   print(p,ifff);
-   print(p > 10);
-while p > 10;
+function;
+if s > t then print(50);
+else print(100);
+endif;
+end;
+s = 5;
+t = 3;
+call;
+s = 2;
+call;
 finish;

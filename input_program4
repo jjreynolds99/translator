@@ -1,4 +1,15 @@
 start;
-number = 3;
-print(number >=4);
+function;
+print(4*dogs);
+print(cats);
+print(3*fish);
+end;
+dogs = 2;
+cats = 6;
+fish = 10;
+call;
+dogs = 3;
+call;
+fish = 0;
+call;
 finish;

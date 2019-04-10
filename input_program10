@@ -1,0 +1,9 @@
+start;
+function;
+if ending < 1 then 
+print(ending);
+endif;
+end;
+ending = 0;
+call;
+finish;

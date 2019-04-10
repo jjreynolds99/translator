@@ -1,0 +1,10 @@
+start;
+function;
+print(elephants + giraffes + lions + emus);
+end;
+elephants = 5;
+giraffes = 4;
+lions = 2;
+emus = 6;
+call;
+finish;

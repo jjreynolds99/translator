@@ -348,7 +348,7 @@ single_stm ::=
          |
        PRINT LPAREN exps:es RPAREN  SEMI
         {: RESULT = new PrintStm(es); :}
- 	 |
+         |
        CALL SEMI
         {: RESULT = new CallStm(); :}
        ;
